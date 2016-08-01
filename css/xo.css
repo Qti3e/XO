@@ -1,0 +1,106 @@
+body,html{
+    overflow: hidden;
+    height: 100%;
+    background-color: #4cccca;
+}
+#body{
+    height: calc(100% - 50px);
+}
+#squares{
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.sq{
+    border: #35404f 2px solid;
+    width: calc(33% - 15px);
+    height: calc(33% - 15px);
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.a-x{
+    background-image: url('../img/x.png');
+    cursor: auto;
+}
+.a-o{
+    background-image: url("../img/o.png");
+    cursor: auto;
+}
+#panel{
+    width: 100%;
+    height: 60px;
+    background-color: #35404f;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    color: #4cccca;
+}
+#status_score{
+    float: left;
+    font-size: 25px;
+}
+#panel div{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+#client{
+    float: right;
+}
+#panel small{
+    font-size: 10px;
+}
+#status_equals{
+    float: right;
+    font-size: 25px;
+}
+.win{
+    background-color: #35404f;
+}
+.message{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: calc(50% - 75px);
+    height: 75px;
+    display: none;
+}
+.message .text{
+    text-align: center;
+    font-size: 200%;
+    color: #fff;
+}
+#you_win{
+    background-color: #81ff61;
+}
+#you_lose{
+    background-color: #ff233c;
+}
+#equal{
+    background-image: linear-gradient(90deg,#81ff61,#ff233c);
+}
+button.reload,button.about{
+    border: none;
+    background-color: #35404f;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 150%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#about{
+    background-color: #ffd747;
+}
+a{
+    text-decoration: none;
+    color: #35404f;
+}
