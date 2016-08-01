@@ -199,7 +199,7 @@ function check(i1,i2,i3){
         $("#body").css('opacity','0.2');
         if(status == 'lose'){
             $("#you_lose").show('slow');
-            localStorage['xo_score'] = parseInt(localStorage['xo_score']) - 100;
+            localStorage['xo_score'] = parseInt(localStorage['xo_score']) - 3000;
             finish  = true;
         }else{
             $("#you_win").show('slow');
