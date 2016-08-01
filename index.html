@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XO</title>
+    <link rel="stylesheet" href="css/xo.css">
+</head>
+<body>
+    <div id="body">
+        <div id="squares">
+            <div id="s1" class="sq"></div>
+            <div id="s2" class="sq"></div>
+            <div id="s3" class="sq"></div>
+            <div id="s4" class="sq"></div>
+            <div id="s5" class="sq"></div>
+            <div id="s6" class="sq"></div>
+            <div id="s7" class="sq"></div>
+            <div id="s8" class="sq"></div>
+            <div id="s9" class="sq"></div>
+        </div>
+        <div id="panel">
+            <div id="client" class="sq about"></div>
+            <div id="status_equals"><b></b><br><small>Equals</small></div>
+            <div id="status_score"><b></b><br><small>Score</small></div>
+        </div>
+    </div>
+    <div class="message" id="you_win">
+        <div class="text">Oh yeah, You Win!</div>
+        <button class="reload">Replay!</button>
+    </div>
+    <div class="message" id="you_lose">
+        <div class="text">Sorry! but you lose!</div>
+        <button class="reload">Try again!</button>
+    </div>
+    <div class="message" id="equal">
+        <div class="text">EQUAL!</div>
+        <button class="reload">Replay!</button>
+    </div>
+    <div class="message" id="about">
+        <div class="text">Created by <a target="_blank" href="https://githuub.com/qti3e">@Qti3e</a></div>
+        <button class="about">Close</button>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/xo.js"></script>
+</body>
+</html>
