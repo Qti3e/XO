@@ -17,7 +17,7 @@
  *                             Created by  Qti3e                             *
  *        <http://Qti3e.Github.io>    LO-VE    <Qti3eQti3e@Gmail.com>        *
  *****************************************************************************/
-var client,bot,finish;
+var client,bot,finish,t = 0;
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -49,17 +49,93 @@ $("#client").addClass(client);
 function ch0(i1,i2){
     return (gss(i1) == gss(i2)) && (gss(i1) !== 1);
 }
+function ch2(i1,i2){
+    return (gss(i1) == gss(i2)) && (gss(i1) !== 1);
+}
+function is_user(i){
+    return (gss(i) == 2);
+}
 function ch1(i1,i2){
     if(gss(i1) + gss(i2) == 4){
         return 100;
     }
     return gss(i1) + gss(i2);
 }
-function choose(){
+function choose(p){
+    t++;
+    debugger;
     //For ch 0
     if(finish){
         return;
     }
+    if(t == 1){
+        switch (p){
+            case 1:
+                return 9;
+            case 3:
+                return 7;
+            case 7:
+                return 3;
+            case 9:
+                return 1;
+        }
+    }
+
+    //For I1
+    if(gss(1) === 1){
+        if(ch2(2,3) || ch2(4,7) || ch2(5,9)){
+            return 1;
+        }
+    }
+//For I2
+    if(gss(2) === 1){
+        if(ch2(1,3) || ch2(5,8)){
+            return 2;
+        }
+    }
+//For I3
+    if(gss(3) === 1){
+        if(ch2(1,2) || ch2(6,9) || ch2(5,7)){
+            return 3;
+        }
+    }
+//For I4
+    if(gss(4) === 1){
+        if(ch2(1,7) || ch2(5,6)){
+            return 4;
+        }
+    }
+//For I5
+    if(gss(5) === 1){
+        if(ch2(2,8) || ch2(4,6) || ch2(1,9) || ch2(7,3)){
+            return 5;
+        }
+    }
+//For I6
+    if(gss(6) === 1){
+        if(ch2(5,4) || ch2(3,9)){
+            return 6;
+        }
+    }
+//For I7
+    if(gss(7) === 1){
+        if(ch2(5,3) || ch2(1,4) || ch2(8,9)){
+            return 7;
+        }
+    }
+//For I8
+    if(gss(8) === 1){
+        if(ch2(2,5) || ch2(7,9)){
+            return 8;
+        }
+    }
+//For I9
+    if(gss(9) === 1){
+        if(ch2(7,8) || ch2(1,5) || ch2(3,6)){
+            return 9;
+        }
+    }
+
     //For I1
     if(gss(1) === 1){
         if(ch0(2,3) || ch0(4,7) || ch0(5,9)){
@@ -223,17 +299,18 @@ $('#squares .sq').click(function(){
         return;
     }
     var el  = $(this);
+    var p   = el.attr('id').substr(1);
     if(el.data('status') === undefined){
         el.attr('data-status','client')
             .addClass(client);
         winner();
         lock = true;
         setTimeout(function () {
-            $('#s'+choose()).attr('data-status','bot')
+            $('#s'+choose(parseInt(p))).attr('data-status','bot')
                 .addClass(bot);
             winner();
             lock = false;
-        },1500);
+        },750);
     }else{
         //alert('It\'s already selected.');
     }
