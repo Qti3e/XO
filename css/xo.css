@@ -17,7 +17,7 @@ body,html{
 .sq{
     border: #35404f 2px solid;
     width: calc(33% - 15px);
-    height: calc(33% - 15px);
+    height: calc(33% - 30px);
     display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
